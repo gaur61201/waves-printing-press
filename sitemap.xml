@@ -4,22 +4,22 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://wavesprintingpress.com/</loc>
+    <loc>https://gaur61201.github.io/waves-printing-press/</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://wavesprintingpress.com/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://wavesprintingpress.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gaur61201.github.io/waves-printing-press/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://gaur61201.github.io/waves-printing-press/"/>
   </url>
 
   <!-- Blog -->
   <url>
-    <loc>https://wavesprintingpress.com/blog.html</loc>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog.html</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://wavesprintingpress.com/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://wavesprintingpress.com/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gaur61201.github.io/waves-printing-press/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://gaur61201.github.io/waves-printing-press/blog.html"/>
   </url>
 
 </urlset>
