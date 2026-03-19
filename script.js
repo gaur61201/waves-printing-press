@@ -16,6 +16,10 @@ function initGSAP() {
 /* ==============================================
    1. PRELOADER — Video Preloader
    ============================================== */
+function isMobile() {
+  return window.innerWidth <= 768 || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
+
 function initPreloader() {
   const preloader = document.getElementById('preloader');
   const preloaderVideo = document.getElementById('preloader-video');
@@ -33,6 +37,14 @@ function initPreloader() {
     revealPage();
   }
 
+  // Skip preloader entirely on mobile
+  if (isMobile()) {
+    preloader.style.display = 'none';
+    if (pageContent) pageContent.style.opacity = '1';
+    initPageAnimations();
+    return;
+  }
+
   // Skip if shown this session
   if (sessionStorage.getItem('wpp_preloader_shown')) {
     preloader.classList.add('hidden');
@@ -42,7 +54,7 @@ function initPreloader() {
     return;
   }
 
-  if (preloader && preloaderVideo) {
+  if (preloaderVideo) {
     preloaderVideo.muted = true;
     preloaderVideo.setAttribute('muted', '');
     preloaderVideo.setAttribute('playsinline', '');
