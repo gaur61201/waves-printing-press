@@ -19,7 +19,6 @@ function initGSAP() {
 function initPreloader() {
   const preloader = document.getElementById('preloader');
   const preloaderVideo = document.getElementById('preloader-video');
-  const preloaderTap = document.getElementById('preloader-tap');
   const pageContent = document.getElementById('page-content');
 
   if (!preloader) {
@@ -45,37 +44,24 @@ function initPreloader() {
 
   if (preloader && preloaderVideo) {
     preloaderVideo.muted = true;
-    const playPromise = preloaderVideo.play();
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        // Autoplay worked (desktop / Android)
-        if (preloaderTap) preloaderTap.style.display = 'none';
-        preloaderVideo.addEventListener('ended', hidePreloader);
-        setTimeout(hidePreloader, 8000);
-      }).catch(() => {
-        // Autoplay blocked (iOS) — show tap button
-        if (preloaderTap) preloaderTap.style.display = 'flex';
-        preloaderTap.addEventListener('click', () => {
-          preloaderTap.style.display = 'none';
-          preloaderVideo.play();
-          preloaderVideo.addEventListener('ended', hidePreloader);
-        });
-        // Fallback: skip after 3s if user doesn't tap
-        setTimeout(hidePreloader, 3000);
-      });
-    }
+    preloaderVideo.setAttribute('muted', '');
+    preloaderVideo.setAttribute('playsinline', '');
+    preloaderVideo.setAttribute('webkit-playsinline', '');
+    preloaderVideo.load();
+    preloaderVideo.play().catch(() => {});
+    preloaderVideo.addEventListener('ended', hidePreloader);
+    setTimeout(hidePreloader, 8000);
   }
 }
 
-/* Hero video — force play on mobile / iOS */
-document.addEventListener('DOMContentLoaded', () => {
+/* Hero video — force play on iOS */
+window.addEventListener('load', () => {
   const heroVid = document.querySelector('.hero-video');
   if (heroVid) {
     heroVid.muted = true;
+    heroVid.setAttribute('muted', '');
+    heroVid.load();
     heroVid.play().catch(() => {});
-    document.addEventListener('touchstart', () => {
-      heroVid.play().catch(() => {});
-    }, { once: true });
   }
 });
 
