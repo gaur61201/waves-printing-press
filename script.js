@@ -36,6 +36,8 @@ function initPreloader() {
   }
 
   if (preloaderVideo) {
+    preloaderVideo.muted = true;
+    preloaderVideo.play().catch(() => {});
     preloaderVideo.addEventListener('ended', () => {
       sessionStorage.setItem('wpp_preloader_shown', 'true');
       preloader.classList.add('hidden');
@@ -53,6 +55,13 @@ function initPreloader() {
       revealPage();
     }
   }, 6000);
+}
+
+/* Force-play hero video on mobile */
+const heroVideo = document.getElementById('hero-video');
+if (heroVideo) {
+  heroVideo.muted = true;
+  heroVideo.play().catch(() => {});
 }
 
 /* Reveal page after preloader */

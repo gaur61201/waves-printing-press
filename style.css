@@ -132,6 +132,14 @@ body[dir="rtl"] .section-title { font-family: var(--font-arabic); }
   object-fit: cover;
   display: block;
 }
+@media (max-width: 768px) {
+  #preloader-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    background: #080808;
+  }
+}
 
 /* === 4. NAVBAR === */
 #navbar {
