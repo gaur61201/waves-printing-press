@@ -678,8 +678,8 @@ body[dir="rtl"] .f-tab { font-family: var(--font-arabic); }
 .proc-line {
   position: absolute;
   top: 36px;
-  left: calc(12.5% + 18px);
-  right: calc(12.5% + 18px);
+  left: calc(10% + 18px);
+  right: calc(10% + 18px);
   height: 2px; background: var(--border);
 }
 .proc-line-fill {
