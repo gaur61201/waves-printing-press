@@ -287,7 +287,7 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
 /* === 5. HERO === */
 #hero {
   min-height: 100vh;
-  background: var(--primary);
+  background: #87CEEB !important;
   position: relative;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
