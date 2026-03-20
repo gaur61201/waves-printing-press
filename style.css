@@ -1337,7 +1337,8 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
   justify-content: center;
   z-index: 2;
   transition: opacity 1s ease;
-  padding-top: 5%;
+  padding: 0;
+  margin: 0;
 }
 
 .chairman-video-layer.fade-out {
@@ -1346,18 +1347,17 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
 }
 
 #chairman-video {
-  width: 70%;
+  width: 40%;
   height: auto;
-  max-width: 800px;
+  max-width: 500px;
+  min-width: 300px;
   object-fit: contain;
-  position: relative;
-  margin-top: 8%;
 }
 
 @media (max-width: 768px) {
   #chairman-video {
-    width: 95%;
-    margin-top: 10%;
+    width: 85%;
+    max-width: 340px;
   }
 }
 
