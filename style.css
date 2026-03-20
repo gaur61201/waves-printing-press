@@ -819,7 +819,98 @@ body[dir="rtl"] .faq-body { font-family: var(--font-arabic); }
 #faq details .faq-body,
 #faq details .faq-answer { padding: 1.25rem 1.5rem; color: #6B7280; line-height: 1.7; }
 
-/* === 14. CONTACT === */
+/* === 14. BEHIND THE SCENES === */
+#behind-the-scenes {
+  background: #0A1628;
+  padding: 80px 0;
+  overflow: hidden;
+}
+#behind-the-scenes .section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+#behind-the-scenes h2 {
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+#behind-the-scenes .section-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1rem;
+}
+.bts-marquee-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.bts-marquee-wrapper::before,
+.bts-marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.bts-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #0A1628, transparent);
+}
+.bts-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #0A1628, transparent);
+}
+.bts-marquee-track {
+  display: flex;
+  gap: 20px;
+  animation: btsMarquee 35s linear infinite;
+  width: max-content;
+}
+.bts-marquee-track:hover {
+  animation-play-state: paused;
+}
+@keyframes btsMarquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.bts-image-card {
+  width: 320px;
+  height: 220px;
+  background: #1a2a44;
+  border-radius: 12px;
+  border: 1px solid rgba(30, 111, 255, 0.2);
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+.bts-image-card span {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  font-weight: 500;
+  font-family: Inter, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.bts-image-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 20px,
+    rgba(30, 111, 255, 0.03) 20px,
+    rgba(30, 111, 255, 0.03) 40px
+  );
+}
+
+/* === 15. CONTACT === */
 #contact { background: var(--light-bg); }
 
 .contact-grid {
