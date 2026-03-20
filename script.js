@@ -280,9 +280,16 @@ function initPortfolio() {
 
   if (!lightbox) return;
 
+  const lbImg = document.getElementById('lb-img');
+
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      const title = card.dataset.title || 'Portfolio Item';
+      const cardImg = card.querySelector('img');
+      const title   = card.dataset.title || 'Portfolio Item';
+      if (lbImg && cardImg) {
+        lbImg.src = cardImg.src;
+        lbImg.alt = cardImg.alt;
+      }
       if (lbCaption) lbCaption.textContent = title;
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
