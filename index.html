@@ -651,14 +651,13 @@
     </div>
   </section>
 
-  <!-- Lightbox modal -->
-  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Portfolio image viewer">
-    <div class="lb-inner">
-      <button class="lb-close" id="lb-close" aria-label="Close lightbox">
-        <i class="fa-solid fa-times" aria-hidden="true"></i>
-      </button>
-      <img id="lb-img" src="" alt="" style="width:100%;max-height:70vh;object-fit:contain;border-radius:8px;display:block;">
-      <p class="lb-caption" id="lb-caption"></p>
+  <!-- Portfolio lightbox modal -->
+  <div id="portfolio-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Portfolio image viewer">
+    <div class="lightbox-overlay" id="lightbox-overlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+      <img id="lightbox-img" src="" alt="" style="width:100%;height:auto;max-height:75vh;object-fit:contain;border-radius:8px;display:block;">
+      <p id="lightbox-title" style="color:#ffffff;text-align:center;margin-top:16px;font-size:1.1rem;font-weight:500;"></p>
     </div>
   </div>
 

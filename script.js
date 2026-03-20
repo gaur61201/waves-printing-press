@@ -274,37 +274,35 @@ function initPortfolio() {
   });
 
   /* -- Lightbox -- */
-  const lightbox  = document.getElementById('lightbox');
-  const lbClose   = document.getElementById('lb-close');
-  const lbCaption = document.getElementById('lb-caption');
+  const modal        = document.getElementById('portfolio-modal');
+  const lightboxImg  = document.getElementById('lightbox-img');
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const closeBtn     = document.getElementById('lightbox-close');
+  const overlay      = document.getElementById('lightbox-overlay');
 
-  if (!lightbox) return;
+  if (!modal) return;
 
-  const lbImg = document.getElementById('lb-img');
+  function closeLightbox() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
   cards.forEach(card => {
     card.addEventListener('click', () => {
       const cardImg = card.querySelector('img');
       const title   = card.dataset.title || 'Portfolio Item';
-      if (lbImg && cardImg) {
-        lbImg.src = cardImg.src;
-        lbImg.alt = cardImg.alt;
+      if (lightboxImg && cardImg) {
+        lightboxImg.src = cardImg.src;
+        lightboxImg.alt = cardImg.alt;
       }
-      if (lbCaption) lbCaption.textContent = title;
-      lightbox.classList.add('open');
+      if (lightboxTitle) lightboxTitle.textContent = title;
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
   });
 
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  if (lbClose) lbClose.addEventListener('click', closeLightbox);
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) closeLightbox();
-  });
+  if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+  if (overlay)  overlay.addEventListener('click', closeLightbox);
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') closeLightbox();
   });

@@ -610,8 +610,34 @@ body[dir="rtl"] .f-tab { font-family: var(--font-arabic); }
 .port-overlay i { font-size: 1.4rem; color: var(--white); }
 
 /* Lightbox */
+.lightbox-modal {
+  display: none;
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 9000;
+  align-items: center; justify-content: center;
+}
+.lightbox-modal.active { display: flex; }
+.lightbox-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,.85);
+}
+.lightbox-content {
+  position: relative; z-index: 1;
+  max-width: 800px; width: 90%; padding: 20px;
+}
+.lightbox-close {
+  position: absolute; top: -15px; right: -15px;
+  background: var(--accent); border: none; color: #fff;
+  width: 36px; height: 36px; border-radius: 50%;
+  font-size: 1.4rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 2; line-height: 1;
+}
+.lightbox-close:hover { background: #0050cc; }
+
+/* Legacy — kept for safety but no longer used */
 #lightbox {
-  position: fixed; inset: 0; z-index: 9998;
+  position: fixed; inset: 0; z-index: 8000;
   background: rgba(0,0,0,.9);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none;
