@@ -828,20 +828,25 @@ body[dir="rtl"] .faq-body { font-family: var(--font-arabic); }
 #behind-the-scenes .section-header {
   text-align: center;
   margin-bottom: 48px;
+  padding: 0 var(--sp-4);
 }
 #behind-the-scenes h2 {
-  color: #FFFFFF;
-  font-size: 2.2rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 700;
+  color: #FFFFFF;
+  text-align: center;
   margin-bottom: 12px;
 }
 #behind-the-scenes .section-subtitle {
   color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
+  text-align: center;
 }
 .bts-marquee-wrapper {
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 .bts-marquee-wrapper::before,
 .bts-marquee-wrapper::after {
@@ -863,14 +868,15 @@ body[dir="rtl"] .faq-body { font-family: var(--font-arabic); }
 }
 .bts-marquee-track {
   display: flex;
+  flex-direction: row;
   gap: 20px;
-  animation: btsMarquee 35s linear infinite;
+  animation: btsScroll 35s linear infinite;
   width: max-content;
 }
 .bts-marquee-track:hover {
   animation-play-state: paused;
 }
-@keyframes btsMarquee {
+@keyframes btsScroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
