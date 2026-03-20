@@ -1350,6 +1350,7 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
   max-width: 420px !important;
   height: auto !important;
   flex-shrink: 0 !important;
+  mix-blend-mode: screen;
 }
 
 #chairman-video {
@@ -1357,6 +1358,7 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
   height: auto !important;
   display: block !important;
   object-fit: contain !important;
+  mix-blend-mode: screen;
 }
 
 @media (max-width: 768px) {
