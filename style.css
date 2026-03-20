@@ -1279,6 +1279,22 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
   body[dir="rtl"] .proc-step { flex-direction: row-reverse; text-align: right; }
   .proc-circle { margin-bottom: 0; flex-shrink: 0; }
 
+  /* Vertical connecting line replacing the hidden horizontal one */
+  .process-wrap::before {
+    content: '';
+    position: absolute;
+    left: calc(var(--sp-2) + 36px); /* step left-padding (16px) + half circle (36px) */
+    top: 36px;    /* centre of first circle */
+    bottom: 36px; /* centre of last circle */
+    width: 2px;
+    background: var(--accent);
+    z-index: 0;
+  }
+  body[dir="rtl"] .process-wrap::before {
+    left: auto;
+    right: calc(var(--sp-2) + 36px); /* mirror for Arabic layout */
+  }
+
   /* Blog toolbar */
   .blog-toolbar { flex-direction: column; }
   .blog-search { max-width: 100%; }
