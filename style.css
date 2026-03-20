@@ -1355,22 +1355,19 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
 }
 
 .chairman-video-wrapper {
-  width: 320px !important;
-  max-width: 320px !important;
-  min-width: 320px !important;
-  height: 320px !important;
-  max-height: 320px !important;
-  overflow: hidden !important;
+  width: 480px !important;
+  max-width: 480px !important;
+  min-width: 480px !important;
+  height: auto !important;
   flex-shrink: 0 !important;
   mix-blend-mode: screen !important;
-  position: relative !important;
+  margin-top: 60px !important;
 }
 
 #chairman-video {
-  width: 320px !important;
-  max-width: 320px !important;
-  height: 320px !important;
-  max-height: 320px !important;
+  width: 480px !important;
+  max-width: 480px !important;
+  height: auto !important;
   object-fit: contain !important;
   display: block !important;
   mix-blend-mode: screen !important;
@@ -1378,14 +1375,14 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
 
 @media (max-width: 768px) {
   .chairman-video-wrapper {
-    width: 240px !important;
-    max-width: 240px !important;
-    min-width: 240px !important;
-    height: 240px !important;
+    width: 280px !important;
+    max-width: 280px !important;
+    min-width: 280px !important;
+    margin-top: 40px !important;
   }
   #chairman-video {
-    width: 240px !important;
-    max-width: 240px !important;
+    width: 280px !important;
+    max-width: 280px !important;
   }
 }
 
