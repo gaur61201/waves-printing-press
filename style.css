@@ -1310,12 +1310,28 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  background: #000000 !important;
-  transition: background 1.5s ease !important;
+  background: radial-gradient(ellipse at center, #050d1a 0%, #0A1628 50%, #0d1f3c 100%) !important;
 }
 
 #chairman::before {
   display: none !important;
+}
+
+#chairman-black-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
+}
+
+#chairman-black-overlay.fade-out {
+  opacity: 0;
 }
 
 .chairman-video-layer {
