@@ -75,7 +75,7 @@ window.addEventListener('load', () => {
 
   if (!isIOS) {
     // Android + Desktop: use the new video file
-    heroVid.src = 'videos/hero section video/hero_video_only_for_andriod_pc.webm';
+    heroVid.src = 'videos/hero_section_video/hero_video_only_for_andriod_pc.webm';
   }
   // iOS: keep the existing src (hero_section_video.mp4) unchanged
 
