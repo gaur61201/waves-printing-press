@@ -1311,19 +1311,11 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
   align-items: center !important;
   justify-content: center !important;
   background: #000000 !important;
+  transition: background 1.5s ease !important;
 }
 
 #chairman::before {
-  content: '' !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  background:
-    linear-gradient(to right, #0A1628 0%, #000000 20%, #000000 80%, #0A1628 100%) !important;
-  pointer-events: none !important;
-  z-index: 0 !important;
+  display: none !important;
 }
 
 .chairman-video-layer {

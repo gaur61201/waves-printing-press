@@ -606,6 +606,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function revealMessage() {
     if (chairmanVideoLayer) chairmanVideoLayer.style.opacity = '0';
+
+    // Transition background from black to navy gradient
+    const chairmanSection = document.getElementById('chairman');
+    if (chairmanSection) {
+      chairmanSection.style.background = 'radial-gradient(ellipse at center, #050d1a 0%, #0A1628 50%, #0d1f3c 100%)';
+    }
+
     setTimeout(() => {
       if (chairmanVideoLayer) chairmanVideoLayer.style.display = 'none';
       if (chairmanMessage) chairmanMessage.style.opacity = '1';
