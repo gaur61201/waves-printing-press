@@ -560,45 +560,6 @@ function initScrollAnimations() {
 }
 
 /* ==============================================
-   10. CHAIRMAN VIDEO SECTION
-   ============================================== */
-function initChairman() {
-  const chairmanSection   = document.getElementById('chairman');
-  const chairmanVideo     = document.getElementById('chairman-video');
-  const chairmanVideoLayer = document.querySelector('.chairman-video-layer');
-  const chairmanMessage   = document.getElementById('chairman-message');
-
-  if (!chairmanSection || !chairmanVideo) return;
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        chairmanVideo.muted = true;
-        chairmanVideo.play().catch(() => {});
-        observer.unobserve(chairmanSection);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  observer.observe(chairmanSection);
-
-  chairmanVideo.addEventListener('ended', () => {
-    chairmanVideoLayer.classList.add('fade-out');
-    setTimeout(() => {
-      chairmanMessage.classList.add('visible');
-    }, 800);
-  });
-
-  // Fallback: show message if video fails or takes too long
-  setTimeout(() => {
-    if (chairmanMessage && !chairmanMessage.classList.contains('visible')) {
-      if (chairmanVideoLayer) chairmanVideoLayer.classList.add('fade-out');
-      chairmanMessage.classList.add('visible');
-    }
-  }, 12000);
-}
-
-/* ==============================================
    11. PAGE ANIMATIONS — called after preloader
    ============================================== */
 function initPageAnimations() {
@@ -607,7 +568,6 @@ function initPageAnimations() {
   initStatCounters();
   initPortfolio();
   initBlogSearch();
-  initChairman();
 }
 
 /* ==============================================
@@ -619,4 +579,66 @@ document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initPopup();
   initForms();
+});
+
+/* ==============================================
+   10. CHAIRMAN VIDEO SECTION
+   ============================================== */
+document.addEventListener('DOMContentLoaded', () => {
+  const chairmanSection    = document.getElementById('chairman');
+  const chairmanVideo      = document.getElementById('chairman-video');
+  const chairmanVideoLayer = document.querySelector('.chairman-video-layer');
+  const chairmanMessage    = document.getElementById('chairman-message');
+
+  if (!chairmanSection || !chairmanVideo) return;
+
+  // Hide message initially
+  if (chairmanMessage) {
+    chairmanMessage.style.opacity = '0';
+    chairmanMessage.style.transition = 'opacity 1.2s ease';
+  }
+
+  // Show video layer initially
+  if (chairmanVideoLayer) {
+    chairmanVideoLayer.style.opacity = '1';
+    chairmanVideoLayer.style.transition = 'opacity 1s ease';
+  }
+
+  function revealMessage() {
+    if (chairmanVideoLayer) chairmanVideoLayer.style.opacity = '0';
+    setTimeout(() => {
+      if (chairmanVideoLayer) chairmanVideoLayer.style.display = 'none';
+      if (chairmanMessage) chairmanMessage.style.opacity = '1';
+    }, 1000);
+  }
+
+  // IntersectionObserver with low threshold
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        chairmanVideo.muted = true;
+        chairmanVideo.currentTime = 0;
+        const playPromise = chairmanVideo.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            // Autoplay failed — reveal message immediately
+            revealMessage();
+          });
+        }
+        observer.unobserve(chairmanSection);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  observer.observe(chairmanSection);
+
+  // When video ends — reveal message
+  chairmanVideo.addEventListener('ended', revealMessage);
+
+  // Fallback — if video hasn't ended after 15s, reveal anyway
+  setTimeout(() => {
+    if (chairmanMessage && chairmanMessage.style.opacity !== '1') {
+      revealMessage();
+    }
+  }, 15000);
 });
