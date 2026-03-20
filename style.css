@@ -1346,25 +1346,29 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
 }
 
 .chairman-video-wrapper {
-  width: 420px !important;
-  max-width: 420px !important;
-  height: auto !important;
+  width: 65% !important;
+  max-width: 65% !important;
+  height: 100vh !important;
   flex-shrink: 0 !important;
   mix-blend-mode: screen;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 #chairman-video {
   width: 100% !important;
-  height: auto !important;
+  height: 100% !important;
   display: block !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
   mix-blend-mode: screen;
 }
 
 @media (max-width: 768px) {
   .chairman-video-wrapper {
-    width: 280px !important;
-    max-width: 280px !important;
+    width: 95% !important;
+    max-width: 95% !important;
+    height: 60vh !important;
   }
 }
 
