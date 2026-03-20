@@ -1299,6 +1299,128 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
   visibility: visible !important;
 }
 
+/* =============================================
+   CHAIRMAN SECTION
+   ============================================= */
+#chairman {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at center, #000000 0%, #050d1a 40%, #0A1628 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#chairman::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.15) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.1) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 20%, rgba(255,255,255,0.12) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 80%, rgba(255,255,255,0.08) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 45%, rgba(255,255,255,0.1) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.chairman-video-layer {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition: opacity 1s ease;
+}
+
+.chairman-video-layer.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#chairman-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.chairman-message {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  padding: 80px 0;
+}
+
+.chairman-message.visible {
+  opacity: 1;
+}
+
+.chairman-inner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 64px;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.chairman-photo-placeholder {
+  width: 280px;
+  height: 320px;
+  background: rgba(30, 111, 255, 0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(30, 111, 255, 0.2);
+}
+
+.chairman-quote-icon {
+  color: #1E6FFF;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  opacity: 0.7;
+}
+
+.chairman-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.15rem;
+  line-height: 1.9;
+  font-style: italic;
+  margin-bottom: 32px;
+}
+
+.chairman-signature h4 {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.chairman-signature span {
+  color: #1E6FFF;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .chairman-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  .chairman-photo-placeholder {
+    width: 180px;
+    height: 220px;
+    margin: 0 auto;
+  }
+}
+
 /* Contact section — never hidden by GSAP */
 #contact,
 #contact .contact-form,

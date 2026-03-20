@@ -560,7 +560,46 @@ function initScrollAnimations() {
 }
 
 /* ==============================================
-   10. PAGE ANIMATIONS — called after preloader
+   10. CHAIRMAN VIDEO SECTION
+   ============================================== */
+function initChairman() {
+  const chairmanSection   = document.getElementById('chairman');
+  const chairmanVideo     = document.getElementById('chairman-video');
+  const chairmanVideoLayer = document.querySelector('.chairman-video-layer');
+  const chairmanMessage   = document.getElementById('chairman-message');
+
+  if (!chairmanSection || !chairmanVideo) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        chairmanVideo.muted = true;
+        chairmanVideo.play().catch(() => {});
+        observer.unobserve(chairmanSection);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(chairmanSection);
+
+  chairmanVideo.addEventListener('ended', () => {
+    chairmanVideoLayer.classList.add('fade-out');
+    setTimeout(() => {
+      chairmanMessage.classList.add('visible');
+    }, 800);
+  });
+
+  // Fallback: show message if video fails or takes too long
+  setTimeout(() => {
+    if (chairmanMessage && !chairmanMessage.classList.contains('visible')) {
+      if (chairmanVideoLayer) chairmanVideoLayer.classList.add('fade-out');
+      chairmanMessage.classList.add('visible');
+    }
+  }, 12000);
+}
+
+/* ==============================================
+   11. PAGE ANIMATIONS — called after preloader
    ============================================== */
 function initPageAnimations() {
   initGSAP();
@@ -568,6 +607,7 @@ function initPageAnimations() {
   initStatCounters();
   initPortfolio();
   initBlogSearch();
+  initChairman();
 }
 
 /* ==============================================
