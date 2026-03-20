@@ -1408,12 +1408,28 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
   margin: 0 auto;
 }
 
+.chairman-section-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.chairman-section-heading h2 {
+  color: #FFFFFF;
+  font-size: 2.2rem;
+  font-weight: 700;
+  font-family: Montserrat, sans-serif;
+  letter-spacing: 0.02em;
+}
+
 .chairman-photo-placeholder {
   width: 280px;
   height: 320px;
-  background: rgba(30, 111, 255, 0.1);
+  background: rgba(30, 111, 255, 0.08);
   border-radius: 16px;
   border: 1px solid rgba(30, 111, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .chairman-quote-icon {
