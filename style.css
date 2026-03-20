@@ -337,12 +337,14 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
   display: flex;
   justify-content: center;
   margin: 0 auto 2rem auto;
+  background: transparent;
 }
-.hero-video-wrap video {
+.hero-video-wrap video, .hero-video {
   width: 280px;
   height: auto;
   display: block;
   pointer-events: none;
+  mix-blend-mode: screen;
   animation: heroVideoPulse 12s ease-in-out infinite;
   will-change: transform;
   backface-visibility: hidden;
