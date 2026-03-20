@@ -288,6 +288,7 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
 #hero {
   min-height: 100vh;
   background: #87CEEB !important;
+  background-color: #87CEEB !important;
   position: relative;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
@@ -296,7 +297,7 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
 /* Subtle animated dot grid */
 .hero-dots {
   position: absolute; inset: 0; z-index: 0;
-  background-image: radial-gradient(circle, rgba(30,111,255,.18) 1px, transparent 1px);
+  background-image: none;
   background-size: 48px 48px;
   animation: dotFade 6s ease-in-out infinite alternate;
 }
@@ -1515,4 +1516,12 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
 #behind-the-scenes .bts-marquee-track {
   opacity: 1 !important;
   visibility: visible !important;
+}
+
+/* === HERO BACKGROUND FORCE OVERRIDE (bottom of file = highest cascade) === */
+#hero,
+section#hero {
+  background: #87CEEB !important;
+  background-color: #87CEEB !important;
+  background-image: none !important;
 }
