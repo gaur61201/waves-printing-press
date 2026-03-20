@@ -1355,9 +1355,9 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
 }
 
 .chairman-video-wrapper {
-  width: 45% !important;
-  max-width: 550px !important;
-  min-width: 300px !important;
+  width: 30% !important;
+  max-width: 380px !important;
+  min-width: 250px !important;
   height: auto !important;
   flex-shrink: 0 !important;
   mix-blend-mode: screen;
@@ -1373,8 +1373,8 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
 
 @media (max-width: 768px) {
   .chairman-video-wrapper {
-    width: 85% !important;
-    max-width: 340px !important;
+    width: 75% !important;
+    max-width: 300px !important;
   }
 }
 
