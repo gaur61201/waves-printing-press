@@ -1415,21 +1415,27 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
 
 .chairman-section-heading h2 {
   color: #FFFFFF;
-  font-size: 2.2rem;
+  font-size: 3rem;
   font-weight: 700;
   font-family: Montserrat, sans-serif;
   letter-spacing: 0.02em;
+  text-align: center;
 }
 
 .chairman-photo-placeholder {
-  width: 280px;
-  height: 320px;
-  background: rgba(30, 111, 255, 0.08);
-  border-radius: 16px;
-  border: 1px solid rgba(30, 111, 255, 0.2);
+  display: none;
+}
+
+.chairman-logo-display {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.chairman-logo-display img {
+  width: 260px;
+  height: auto;
+  display: block;
 }
 
 .chairman-quote-icon {
@@ -1467,10 +1473,8 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
     gap: 32px;
     text-align: center;
   }
-  .chairman-photo-placeholder {
+  .chairman-logo-display img {
     width: 180px;
-    height: 220px;
-    margin: 0 auto;
   }
 }
 
