@@ -66,15 +66,23 @@ function initPreloader() {
   }
 }
 
-/* Hero video — force play on iOS */
+/* Hero video — swap src based on device, then force play */
 window.addEventListener('load', () => {
   const heroVid = document.querySelector('.hero-video');
-  if (heroVid) {
-    heroVid.muted = true;
-    heroVid.setAttribute('muted', '');
-    heroVid.load();
-    heroVid.play().catch(() => {});
+  if (!heroVid) return;
+
+  const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+  if (!isIOS) {
+    // Android + Desktop: use the new video file
+    heroVid.src = 'videos/hero section video/hero_video_only_for_andriod_pc.mp4';
   }
+  // iOS: keep the existing src (hero_section_video.mp4) unchanged
+
+  heroVid.muted = true;
+  heroVid.setAttribute('muted', '');
+  heroVid.load();
+  heroVid.play().catch(() => {});
 });
 
 /* Reveal page after preloader */
@@ -626,15 +634,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        // Ensure all mobile-required attributes are set as actual attributes
         chairmanVideo.muted = true;
+        chairmanVideo.setAttribute('muted', '');
+        chairmanVideo.setAttribute('playsinline', '');
+        chairmanVideo.setAttribute('webkit-playsinline', '');
         chairmanVideo.currentTime = 0;
-        const playPromise = chairmanVideo.play();
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {
-            // Autoplay failed — reveal message immediately
-            revealMessage();
-          });
-        }
+        // Call load() first so mobile browsers have data ready before play()
+        chairmanVideo.load();
+        chairmanVideo.play().catch(() => {
+          // Silently ignore — 15s fallback below will handle it
+        });
         observer.unobserve(chairmanSection);
       }
     });

@@ -1392,10 +1392,13 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
     max-width: 280px !important;
     min-width: 280px !important;
     margin-top: 40px !important;
+    /* mix-blend-mode: screen causes black/invisible video on Android Chrome */
+    mix-blend-mode: normal !important;
   }
   #chairman-video {
     width: 280px !important;
     max-width: 280px !important;
+    mix-blend-mode: normal !important;
   }
 }
 
