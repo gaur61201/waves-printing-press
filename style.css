@@ -872,6 +872,7 @@ body[dir="rtl"] .faq-body { font-family: var(--font-arabic); }
   gap: 20px;
   animation: btsScroll 35s linear infinite;
   width: max-content;
+  will-change: transform;
 }
 .bts-marquee-track:hover {
   animation-play-state: paused;
@@ -1479,9 +1480,13 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
 
 /* Behind The Scenes section — never hidden by GSAP */
 #behind-the-scenes,
-#behind-the-scenes .bts-marquee-wrapper,
-#behind-the-scenes .bts-marquee-track {
+#behind-the-scenes .bts-marquee-wrapper {
   opacity: 1 !important;
   transform: none !important;
+  visibility: visible !important;
+}
+/* Track must NOT have transform:none — that kills the marquee animation */
+#behind-the-scenes .bts-marquee-track {
+  opacity: 1 !important;
   visibility: visible !important;
 }
