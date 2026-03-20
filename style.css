@@ -1298,3 +1298,25 @@ body[dir="rtl"] .blog-cta-banner p { font-family: var(--font-arabic); }
   transform: none !important;
   visibility: visible !important;
 }
+
+/* Contact section — never hidden by GSAP */
+#contact,
+#contact .contact-form,
+#contact .contact-info,
+#contact .contact-wrapper,
+#contact form,
+#contact .map-embed,
+#contact .contact-grid {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* Behind The Scenes section — never hidden by GSAP */
+#behind-the-scenes,
+#behind-the-scenes .bts-marquee-wrapper,
+#behind-the-scenes .bts-marquee-track {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}

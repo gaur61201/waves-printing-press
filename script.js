@@ -540,12 +540,6 @@ function initScrollAnimations() {
     });
   }
 
-  /* Contact grid */
-  const cGrid = document.querySelector('.contact-grid');
-  if (cGrid) {
-    trigger(cGrid, { y: 30, opacity: 0, duration: 0.8 });
-  }
-
   /* Footer columns */
   const fCols = document.querySelectorAll('.footer-col');
   if (fCols.length) {
