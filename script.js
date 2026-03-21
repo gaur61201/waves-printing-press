@@ -468,9 +468,9 @@ function initScrollAnimations() {
     });
   };
 
-  /* Section titles */
+  /* Section titles — no opacity:0 so headings are never invisible on first load */
   document.querySelectorAll('.section-title').forEach(el => {
-    trigger(el, { y: 30, opacity: 0, duration: 0.8, ease: 'power2.out' });
+    trigger(el, { y: 30, duration: 0.8, ease: 'power2.out' });
   });
 
   /* Trusted-by label */
@@ -533,7 +533,7 @@ function initScrollAnimations() {
   }
 
   /* Testimonial section title */
-  trigger(document.querySelector('#testimonials .section-title'), { y: 25, opacity: 0, duration: 0.7 });
+  trigger(document.querySelector('#testimonials .section-title'), { y: 25, duration: 0.7 });
 
   /* Blog cards */
   const blogCards = document.querySelectorAll('#blog .blog-card');

@@ -4,6 +4,17 @@
    Kuwait Market | EN + AR Bilingual
    ============================================= */
 
+/* === 0. HEADING VISIBILITY SAFETY — prevents GSAP from leaving headings invisible === */
+.section-title, .section-heading, .section-subtitle,
+h1, h2, h3,
+.why-waves h2, .services h2, .process h2,
+.testimonials h2, .blog-preview h2, .faq h2,
+.behind-scenes h2, .contact h2, .chairman h2,
+[class*="title"], [class*="heading"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* === 1. CSS VARIABLES === */
 :root {
   /* Brand Colors */
