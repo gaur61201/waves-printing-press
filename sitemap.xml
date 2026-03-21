@@ -22,4 +22,60 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://gaur61201.github.io/waves-printing-press/blog.html"/>
   </url>
 
+  <!-- Blog Posts -->
+  <url>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog-post-1.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog-post-2.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog-post-3.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog-post-4.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog-post-5.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog-post-6.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog-post-7.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog-post-8.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://gaur61201.github.io/waves-printing-press/blog-post-9.html</loc>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
