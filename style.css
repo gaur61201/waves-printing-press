@@ -514,13 +514,14 @@ body[dir="rtl"] .srv-card::before { transform-origin: right; }
 .srv-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
 .srv-card:hover::before { transform: scaleX(1); }
 
-.srv-icon {
-  width: 52px; height: 52px;
-  background: rgba(30,111,255,.08); border-radius: var(--r-sm);
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: var(--sp-3);
+.srv-img {
+  display: block;
+  width: calc(100% + 2 * var(--sp-4));
+  margin: calc(-1 * var(--sp-4)) calc(-1 * var(--sp-4)) var(--sp-3);
+  height: 190px;
+  object-fit: cover;
+  flex-shrink: 0;
 }
-.srv-icon i { font-size: 1.4rem; color: var(--accent); }
 
 .srv-card h3 {
   font-family: var(--font-heading); font-size: 1rem; font-weight: 700;
