@@ -298,7 +298,7 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
 /* === 5. HERO === */
 #hero {
   min-height: 100vh;
-  background: var(--primary); /* fallback while images load */
+  background: transparent;
   position: relative;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
@@ -333,32 +333,9 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
   pointer-events: none;
 }
 
-/* Subtle animated dot grid */
-.hero-dots {
-  position: absolute; inset: 0; z-index: 0;
-  background-image: radial-gradient(circle, rgba(30,111,255,.18) 1px, transparent 1px);
-  background-size: 48px 48px;
-  animation: dotFade 6s ease-in-out infinite alternate;
-}
-@keyframes dotFade {
-  from { opacity: .3; }
-  to   { opacity: .7; }
-}
-
-/* Radial glow */
-.hero-glow {
-  position: absolute; z-index: 0;
-  width: 560px; height: 560px;
-  background: radial-gradient(circle, rgba(30,111,255,.14) 0%, transparent 70%);
-  border-radius: 50%;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  animation: glowPulse 5s ease-in-out infinite alternate;
-}
-@keyframes glowPulse {
-  from { transform: translate(-50%,-50%) scale(1); opacity: .7; }
-  to   { transform: translate(-50%,-50%) scale(1.25); opacity: 1; }
-}
+/* hero-dots and hero-glow hidden — were designed for solid dark background, not image carousel */
+.hero-dots { display: none; }
+.hero-glow  { display: none; }
 
 .hero-content {
   position: relative; z-index: 1;
