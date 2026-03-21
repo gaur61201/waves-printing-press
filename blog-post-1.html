@@ -106,6 +106,8 @@
     /* Language visibility */
     [lang="en"] .ar-text { display: none; }
     [lang="ar"] .en-text { display: none; }
+    body[dir="ltr"] .ar-text { display: none !important; }
+    body[dir="rtl"] .en-text { display: none !important; }
     [lang="ar"] { font-family: var(--font-ar); }
 
     /* =============================================

@@ -997,7 +997,7 @@
 function setLang(lang) {
   const html = document.documentElement;
   html.setAttribute('lang', lang);
-  html.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+  document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
 
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('btn-ar').classList.toggle('active', lang === 'ar');

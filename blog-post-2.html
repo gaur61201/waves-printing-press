@@ -51,6 +51,8 @@
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
     [lang="en"] .ar-text{display:none;}
     [lang="ar"] .en-text{display:none;}
+    body[dir="ltr"] .ar-text{display:none!important;}
+    body[dir="rtl"] .en-text{display:none!important;}
     [lang="ar"]{font-family:var(--font-ar);}
     #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 24px;transition:background 0.3s ease,box-shadow 0.3s ease;}
     #navbar.scrolled{background:rgba(10,22,40,0.97);box-shadow:0 2px 24px rgba(0,0,0,0.35);backdrop-filter:blur(12px);}
