@@ -313,6 +313,7 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  will-change: transform;
 }
 .hero-carousel-overlay {
   position: absolute;
@@ -521,6 +522,7 @@ body[dir="rtl"] .srv-card::before { transform-origin: right; }
   height: 190px;
   object-fit: cover;
   flex-shrink: 0;
+  image-rendering: auto;
 }
 
 .srv-card h3 {
