@@ -329,7 +329,7 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
 .hero-carousel-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 22, 40, 0.7);
+  background: transparent;
   pointer-events: none;
 }
 
