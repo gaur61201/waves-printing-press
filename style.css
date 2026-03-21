@@ -287,10 +287,38 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
 /* === 5. HERO === */
 #hero {
   min-height: 100vh;
-  background: var(--primary);
+  background: var(--primary); /* fallback while images load */
   position: relative;
   display: flex; align-items: center; justify-content: center;
   overflow: hidden;
+}
+
+/* Hero background carousel */
+.hero-carousel {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+.hero-carousel-track {
+  display: flex;
+  height: 100%;
+  width: 400%; /* 3 real slides + 1 clone for infinite loop */
+  will-change: transform;
+}
+.hero-carousel-slide {
+  width: 25%;
+  height: 100%;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.hero-carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.7);
+  pointer-events: none;
 }
 
 /* Subtle animated dot grid */

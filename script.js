@@ -584,6 +584,41 @@ function initPageAnimations() {
 }
 
 /* ==============================================
+   12. HERO BACKGROUND CAROUSEL
+   ============================================== */
+function initHeroCarousel() {
+  const track = document.getElementById('heroCarouselTrack');
+  if (!track) return;
+
+  const totalSlides = 3; // real slides; 4th is a clone of slide 1
+  let current = 0;
+  let transitioning = false;
+
+  function moveTo(index, animate) {
+    track.style.transition = animate
+      ? 'transform 0.9s cubic-bezier(0.77, 0, 0.175, 1)'
+      : 'none';
+    track.style.transform = `translateX(-${index * 25}%)`;
+  }
+
+  track.addEventListener('transitionend', function () {
+    if (current >= totalSlides) {
+      // Jump back to real first slide instantly
+      current = 0;
+      moveTo(0, false);
+    }
+    transitioning = false;
+  });
+
+  setInterval(function () {
+    if (transitioning) return;
+    transitioning = true;
+    current++;
+    moveTo(current, true);
+  }, 5000);
+}
+
+/* ==============================================
    INIT — DOMContentLoaded
    ============================================== */
 document.addEventListener('DOMContentLoaded', () => {
@@ -592,6 +627,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPreloader();
   initPopup();
   initForms();
+  initHeroCarousel();
 });
 
 /* ==============================================
