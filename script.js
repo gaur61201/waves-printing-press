@@ -73,16 +73,22 @@ window.addEventListener('load', () => {
 
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
-  if (!isIOS) {
+  if (isIOS) {
+    // iOS: replace video with static logo image
+    heroVid.style.display = 'none';
+    const heroLogo = document.createElement('img');
+    heroLogo.src = 'images/waves_logo/waves_logo.png';
+    heroLogo.alt = 'Waves Printing Press';
+    heroLogo.className = 'hero-video hero-ios-logo';
+    heroVid.parentNode.insertBefore(heroLogo, heroVid.nextSibling);
+  } else {
     // Android + Desktop: use the new video file
     heroVid.src = 'videos/hero_section_video/hero_video_only_for_andriod_pc.webm';
+    heroVid.muted = true;
+    heroVid.setAttribute('muted', '');
+    heroVid.load();
+    heroVid.play().catch(() => {});
   }
-  // iOS: keep the existing src (hero_section_video.mp4) unchanged
-
-  heroVid.muted = true;
-  heroVid.setAttribute('muted', '');
-  heroVid.load();
-  heroVid.play().catch(() => {});
 });
 
 /* Reveal page after preloader */

@@ -356,6 +356,9 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
   margin: 0 auto 2rem auto;
   background: transparent;
 }
+.hero-ios-logo {
+  mix-blend-mode: normal;
+}
 .hero-video-wrap video, .hero-video {
   width: 280px;
   height: auto;
