@@ -74,13 +74,12 @@ window.addEventListener('load', () => {
   const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   if (isIOS) {
-    // iOS: replace video with static logo image
-    heroVid.style.display = 'none';
+    // iOS: remove video entirely and show static logo image
     const heroLogo = document.createElement('img');
     heroLogo.src = 'images/waves_logo/waves_logo.png';
     heroLogo.alt = 'Waves Printing Press';
     heroLogo.className = 'hero-video hero-ios-logo';
-    heroVid.parentNode.insertBefore(heroLogo, heroVid.nextSibling);
+    heroVid.parentNode.replaceChild(heroLogo, heroVid);
   } else {
     // Android + Desktop: use the new video file
     heroVid.src = 'videos/hero_section_video/hero_video_only_for_andriod_pc.webm';
