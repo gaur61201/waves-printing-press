@@ -1110,11 +1110,11 @@
           <!-- FORMSPREE: replace YOUR_FORMSPREE_ID with real endpoint -->
           <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
             <div class="form-g">
-              <label for="cf-name">
-                <span class="en-text">Full Name *</span>
-                <span class="ar-text">الاسم الكامل *</span>
+              <label for="cf-contact-name">
+                <span class="en-text">Contact Name *</span>
+                <span class="ar-text">اسم جهة التواصل *</span>
               </label>
-              <input type="text" id="cf-name" name="name" required placeholder="Your full name / اسمك الكامل" autocomplete="name">
+              <input type="text" id="cf-contact-name" name="contact_name" required placeholder="Your name / اسمك" autocomplete="name">
             </div>
             <div class="form-g">
               <label for="cf-phone">
@@ -1125,32 +1125,81 @@
             </div>
             <div class="form-g">
               <label for="cf-email">
-                <span class="en-text">Email Address *</span>
-                <span class="ar-text">البريد الإلكتروني *</span>
+                <span class="en-text">Email Address</span>
+                <span class="ar-text">البريد الإلكتروني</span>
               </label>
-              <input type="email" id="cf-email" name="email" required placeholder="your@email.com" autocomplete="email">
+              <input type="email" id="cf-email" name="email" placeholder="your@email.com" autocomplete="email">
             </div>
             <div class="form-g">
-              <label for="cf-service">
-                <span class="en-text">Service Interested In</span>
-                <span class="ar-text">الخدمة المطلوبة</span>
+              <label for="cf-platform">
+                <span class="en-text">How did you find us?</span>
+                <span class="ar-text">كيف وجدتنا؟</span>
               </label>
-              <select id="cf-service" name="service">
-                <option value="">-- Select a service / اختر خدمة --</option>
-                <option value="business-cards">Business Cards &amp; Stationery / بطاقات الأعمال</option>
-                <option value="banners">Banners &amp; Signage / لافتات</option>
-                <option value="packaging">Packaging &amp; Boxes / تغليف وصناديق</option>
-                <option value="events">Wedding &amp; Event Print / طباعة أفراح وفعاليات</option>
-                <option value="large-format">Large Format &amp; Outdoor / طباعة كبيرة</option>
-                <option value="design">Graphic Design / تصميم جرافيكي</option>
+              <select id="cf-platform" name="platform">
+                <option value="">-- Select / اختر --</option>
+                <option value="Landing Page">Landing Page / صفحة هبوط</option>
+                <option value="WhatsApp">WhatsApp / واتساب</option>
+                <option value="Instagram">Instagram / إنستغرام</option>
+                <option value="Facebook">Facebook / فيسبوك</option>
+                <option value="LinkedIn">LinkedIn / لينكد إن</option>
+                <option value="Cold Call">Cold Call / مكالمة باردة</option>
+                <option value="Referral">Referral / إحالة</option>
+                <option value="Other">Other / أخرى</option>
               </select>
             </div>
             <div class="form-g">
-              <label for="cf-message">
-                <span class="en-text">Message</span>
-                <span class="ar-text">الرسالة</span>
+              <label for="cf-company">
+                <span class="en-text">Company Name</span>
+                <span class="ar-text">اسم الشركة</span>
               </label>
-              <textarea id="cf-message" name="message" rows="4" placeholder="Tell us about your project... / أخبرنا عن مشروعك..."></textarea>
+              <input type="text" id="cf-company" name="company_name" placeholder="Your company / شركتك" autocomplete="organization">
+            </div>
+            <div class="form-g">
+              <label for="cf-position">
+                <span class="en-text">Position / Job Title</span>
+                <span class="ar-text">المنصب الوظيفي</span>
+              </label>
+              <input type="text" id="cf-position" name="position" placeholder="e.g. Marketing Manager / مدير التسويق">
+            </div>
+            <div class="form-g">
+              <label for="cf-website">
+                <span class="en-text">Website</span>
+                <span class="ar-text">الموقع الإلكتروني</span>
+              </label>
+              <input type="url" id="cf-website" name="website" placeholder="https://yourwebsite.com" autocomplete="url">
+            </div>
+            <div class="form-g">
+              <label for="cf-language">
+                <span class="en-text">Preferred Language</span>
+                <span class="ar-text">اللغة المفضلة</span>
+              </label>
+              <select id="cf-language" name="language">
+                <option value="">-- Select / اختر --</option>
+                <option value="Arabic">Arabic / عربي</option>
+                <option value="English">English / إنجليزي</option>
+                <option value="Both">Both / كلاهما</option>
+              </select>
+            </div>
+            <div class="form-g">
+              <label for="cf-segment">
+                <span class="en-text">Segment *</span>
+                <span class="ar-text">القطاع *</span>
+              </label>
+              <select id="cf-segment" name="segment" required>
+                <option value="">-- Select / اختر --</option>
+                <option value="School">School / مدرسة</option>
+                <option value="Corporate">Corporate / شركة</option>
+                <option value="Restaurant">Restaurant / مطعم</option>
+                <option value="University">University / جامعة</option>
+                <option value="Event">Event / فعالية</option>
+              </select>
+            </div>
+            <div class="form-g">
+              <label for="cf-notes">
+                <span class="en-text">Notes</span>
+                <span class="ar-text">ملاحظات</span>
+              </label>
+              <textarea id="cf-notes" name="notes" rows="4" placeholder="Any additional details... / أي تفاصيل إضافية..."></textarea>
             </div>
             <button type="submit" class="btn-submit">
               <span class="en-text">Send Message</span>
@@ -1406,11 +1455,11 @@
       <!-- FORMSPREE: same endpoint as contact form -->
       <form id="popup-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
         <div class="form-g">
-          <label for="pf-name">
-            <span class="en-text">Full Name *</span>
-            <span class="ar-text">الاسم الكامل *</span>
+          <label for="pf-contact-name">
+            <span class="en-text">Contact Name *</span>
+            <span class="ar-text">اسم جهة التواصل *</span>
           </label>
-          <input type="text" id="pf-name" name="name" required placeholder="Your name / اسمك" autocomplete="name">
+          <input type="text" id="pf-contact-name" name="contact_name" required placeholder="Your name / اسمك" autocomplete="name">
         </div>
         <div class="form-g">
           <label for="pf-phone">
@@ -1420,19 +1469,82 @@
           <input type="tel" id="pf-phone" name="phone" required placeholder="+965 XXXX XXXX" autocomplete="tel">
         </div>
         <div class="form-g">
-          <label for="pf-service">
-            <span class="en-text">Service Interested In</span>
-            <span class="ar-text">الخدمة المطلوبة</span>
+          <label for="pf-email">
+            <span class="en-text">Email Address</span>
+            <span class="ar-text">البريد الإلكتروني</span>
           </label>
-          <select id="pf-service" name="service">
+          <input type="email" id="pf-email" name="email" placeholder="your@email.com" autocomplete="email">
+        </div>
+        <div class="form-g">
+          <label for="pf-platform">
+            <span class="en-text">How did you find us?</span>
+            <span class="ar-text">كيف وجدتنا؟</span>
+          </label>
+          <select id="pf-platform" name="platform">
             <option value="">-- Select / اختر --</option>
-            <option value="business-cards">Business Cards / بطاقات الأعمال</option>
-            <option value="banners">Banners / لافتات</option>
-            <option value="packaging">Packaging / تغليف</option>
-            <option value="events">Events &amp; Weddings / أفراح وفعاليات</option>
-            <option value="large-format">Large Format / طباعة كبيرة</option>
-            <option value="design">Graphic Design / تصميم</option>
+            <option value="Landing Page">Landing Page / صفحة هبوط</option>
+            <option value="WhatsApp">WhatsApp / واتساب</option>
+            <option value="Instagram">Instagram / إنستغرام</option>
+            <option value="Facebook">Facebook / فيسبوك</option>
+            <option value="LinkedIn">LinkedIn / لينكد إن</option>
+            <option value="Cold Call">Cold Call / مكالمة باردة</option>
+            <option value="Referral">Referral / إحالة</option>
+            <option value="Other">Other / أخرى</option>
           </select>
+        </div>
+        <div class="form-g">
+          <label for="pf-company">
+            <span class="en-text">Company Name</span>
+            <span class="ar-text">اسم الشركة</span>
+          </label>
+          <input type="text" id="pf-company" name="company_name" placeholder="Your company / شركتك" autocomplete="organization">
+        </div>
+        <div class="form-g">
+          <label for="pf-position">
+            <span class="en-text">Position / Job Title</span>
+            <span class="ar-text">المنصب الوظيفي</span>
+          </label>
+          <input type="text" id="pf-position" name="position" placeholder="e.g. Marketing Manager / مدير التسويق">
+        </div>
+        <div class="form-g">
+          <label for="pf-website">
+            <span class="en-text">Website</span>
+            <span class="ar-text">الموقع الإلكتروني</span>
+          </label>
+          <input type="url" id="pf-website" name="website" placeholder="https://yourwebsite.com" autocomplete="url">
+        </div>
+        <div class="form-g">
+          <label for="pf-language">
+            <span class="en-text">Preferred Language</span>
+            <span class="ar-text">اللغة المفضلة</span>
+          </label>
+          <select id="pf-language" name="language">
+            <option value="">-- Select / اختر --</option>
+            <option value="Arabic">Arabic / عربي</option>
+            <option value="English">English / إنجليزي</option>
+            <option value="Both">Both / كلاهما</option>
+          </select>
+        </div>
+        <div class="form-g">
+          <label for="pf-segment">
+            <span class="en-text">Segment *</span>
+            <span class="ar-text">القطاع *</span>
+          </label>
+          <select id="pf-segment" name="segment" required>
+            <option value="">-- Select / اختر --</option>
+            <option value="School">School / مدرسة</option>
+            <option value="Corporate">Corporate / شركة</option>
+            <option value="Restaurant">Restaurant / مطعم</option>
+            <option value="University">University / جامعة</option>
+            <option value="Event">Event / فعالية</option>
+          </select>
+        </div>
+        <div class="form-g">
+          <label for="pf-notes">
+            <span class="en-text">Notes</span>
+            <span class="ar-text">ملاحظات</span>
+          </label>
+          <textarea id="pf-notes" name="notes" rows="3" placeholder="Any additional details... / أي تفاصيل إضافية..."></textarea>
         </div>
         <button type="submit" class="btn-submit">
           <span class="en-text">Get My Free Quote</span>
