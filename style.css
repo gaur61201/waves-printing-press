@@ -430,23 +430,11 @@ body[dir="rtl"] .hero-sub { font-family: var(--font-arabic); }
   border-bottom: 1px solid rgba(30, 111, 255, 0.2);
   overflow: hidden;
 }
-.trusted-label {
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.9);
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(30, 111, 255, 0.4);
-  width: fit-content;
-  margin: 0 auto 32px auto;
-}
-body[dir="rtl"] .trusted-label { font-family: var(--font-arabic); letter-spacing: 0; }
+/* Section title on dark navy background needs white text */
+#trusted-by .section-title { color: rgba(255, 255, 255, 0.9); }
 
 .marquee-wrap {
-  position: relative; overflow: hidden;
+  position: relative; overflow: hidden; white-space: nowrap;
 }
 /* Fade edge masks */
 .marquee-wrap::before,
@@ -457,7 +445,7 @@ body[dir="rtl"] .trusted-label { font-family: var(--font-arabic); letter-spacing
 .marquee-wrap::after  { right: 0; background: linear-gradient(to left,  #0A1628, transparent); }
 
 .marquee-track {
-  display: flex; width: max-content;
+  display: flex; width: fit-content;
   animation: mLeft 30s linear infinite;
   direction: ltr !important; /* RTL page must not flip marquee direction */
 }
