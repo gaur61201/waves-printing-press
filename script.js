@@ -221,6 +221,23 @@ function setLang(lang) {
   // Persist preference
   sessionStorage.setItem('wpp_lang', lang);
 
+  // Force animation containers to LTR regardless of page direction.
+  // CSS direction:ltr alone is not enough — the HTML dir attribute triggers the
+  // browser's BiDi algorithm which overrides CSS for flex layout.
+  // Inline styles beat both, and unicode-bidi:isolate prevents inherited RTL
+  // from reaching inside these elements.
+  const ltrContainers = [
+    document.querySelector('.hero-carousel'),
+    document.getElementById('heroCarouselTrack'),
+    ...document.querySelectorAll('.marquee-track'),
+    document.querySelector('.bts-marquee-track')
+  ];
+  ltrContainers.forEach(function (el) {
+    if (!el) return;
+    el.style.direction    = 'ltr';
+    el.style.unicodeBidi  = 'isolate';
+  });
+
   // Restart hero carousel after direction switch so translateX is re-applied correctly
   if (window._heroCarouselRestart) {
     setTimeout(window._heroCarouselRestart, 150);
