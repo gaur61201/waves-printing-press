@@ -310,12 +310,14 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  direction: ltr !important; /* RTL page must not flip the carousel */
 }
 .hero-carousel-track {
   display: flex;
   height: 100%;
   width: 400%; /* 3 real slides + 1 clone for infinite loop */
   will-change: transform;
+  direction: ltr !important;
 }
 .hero-carousel-slide {
   width: 25%;
@@ -381,6 +383,9 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
   line-height: 1.1;
   margin-bottom: var(--sp-3);
   letter-spacing: -.01em;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.9),
+               0px 0px 20px rgba(0,0,0,0.8),
+               0px 0px 40px rgba(0,0,0,0.6);
 }
 body[dir="rtl"] .hero-h1 { font-family: var(--font-arabic); font-size: clamp(1.8rem,4.5vw,3rem); }
 
@@ -390,6 +395,8 @@ body[dir="rtl"] .hero-h1 { font-family: var(--font-arabic); font-size: clamp(1.8
   max-width: 600px;
   margin: 0 auto var(--sp-4);
   line-height: 1.75;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.9),
+               0px 0px 15px rgba(0,0,0,0.8);
 }
 body[dir="rtl"] .hero-sub { font-family: var(--font-arabic); }
 
@@ -452,6 +459,7 @@ body[dir="rtl"] .trusted-label { font-family: var(--font-arabic); letter-spacing
 .marquee-track {
   display: flex; width: max-content;
   animation: mLeft 30s linear infinite;
+  direction: ltr !important; /* RTL page must not flip marquee direction */
 }
 .marquee-track:hover { animation-play-state: paused; }
 @keyframes mLeft {
@@ -921,6 +929,7 @@ body[dir="rtl"] .faq-body { font-family: var(--font-arabic); }
   animation: btsScroll 35s linear infinite;
   width: max-content;
   will-change: transform;
+  direction: ltr !important; /* RTL page must not flip marquee direction */
 }
 .bts-marquee-track:hover {
   animation-play-state: paused;

@@ -220,6 +220,11 @@ function setLang(lang) {
 
   // Persist preference
   sessionStorage.setItem('wpp_lang', lang);
+
+  // Restart hero carousel after direction switch so translateX is re-applied correctly
+  if (window._heroCarouselRestart) {
+    setTimeout(window._heroCarouselRestart, 150);
+  }
 }
 
 function initLangToggle() {
@@ -598,6 +603,7 @@ function initHeroCarousel() {
   const totalSlides = 3; // real slides; 4th is a clone of slide 1
   let current = 0;
   let transitioning = false;
+  let intervalId = null;
 
   function moveTo(index, animate) {
     track.style.transition = animate
@@ -615,12 +621,25 @@ function initHeroCarousel() {
     transitioning = false;
   });
 
-  setInterval(function () {
-    if (transitioning) return;
-    transitioning = true;
-    current++;
-    moveTo(current, true);
-  }, 5000);
+  function startInterval() {
+    intervalId = setInterval(function () {
+      if (transitioning) return;
+      transitioning = true;
+      current++;
+      moveTo(current, true);
+    }, 5000);
+  }
+
+  // Expose restart so setLang() can call it after direction switch
+  window._heroCarouselRestart = function () {
+    if (intervalId) clearInterval(intervalId);
+    transitioning = false;
+    current = 0;
+    moveTo(0, false);
+    startInterval();
+  };
+
+  startInterval();
 }
 
 /* ==============================================
