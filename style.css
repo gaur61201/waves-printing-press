@@ -389,6 +389,19 @@ body[dir="rtl"] .nav-links a::after { left: auto; right: 0; }
 }
 body[dir="rtl"] .hero-h1 { font-family: var(--font-arabic); font-size: clamp(1.8rem,4.5vw,3rem); }
 
+.hero-tagline {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  color: rgba(255,255,255,.88);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.9),
+               0px 0px 15px rgba(0,0,0,0.7);
+}
+body[dir="rtl"] .hero-tagline { font-family: var(--font-arabic); text-transform: none; letter-spacing: 0; }
+
 .hero-sub {
   font-size: clamp(.95rem, 1.8vw, 1.15rem);
   color: rgba(255,255,255,.72);
