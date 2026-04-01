@@ -795,11 +795,11 @@ body[dir="rtl"] .proc-step p { font-family: var(--font-arabic); }
 }
 .blog-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
 .blog-thumb {
-  background: var(--placeholder-bg); height: 200px;
+  background: var(--placeholder-bg); height: 220px;
   display: flex; align-items: center; justify-content: center;
   color: var(--text-muted); font-size: .82rem; overflow: hidden;
 }
-.blog-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.blog-thumb img { width: 100%; height: 220px; object-fit: cover; object-position: center top; display: block; transition: transform .4s ease; }
 .blog-card:hover .blog-thumb img { transform: scale(1.06); }
 .blog-body { padding: var(--sp-3); }
 .blog-cat {
