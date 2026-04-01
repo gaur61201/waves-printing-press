@@ -1115,8 +1115,7 @@
             <span class="en-text">Send Us a Message</span>
             <span class="ar-text">أرسل لنا رسالة</span>
           </h3>
-          <!-- FORMSPREE: replace YOUR_FORMSPREE_ID with real endpoint -->
-          <form id="contact-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+          <form id="contact-form" action="#" novalidate>
             <div class="form-g">
               <label for="cf-contact-name">
                 <span class="en-text">Contact Name *</span>
@@ -1460,8 +1459,7 @@
         <span class="ar-text">أخبرنا عن مشروع الطباعة وسنرد عليك في غضون ساعة.</span>
       </p>
 
-      <!-- FORMSPREE: same endpoint as contact form -->
-      <form id="popup-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" novalidate>
+      <form id="popup-form" action="#" novalidate>
         <div class="form-g">
           <label for="pf-contact-name">
             <span class="en-text">Contact Name *</span>
@@ -1572,6 +1570,64 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
   <script src="script.js" defer></script>
+
+  <!-- n8n webhook form handler -->
+  <script>
+  (function () {
+    var N8N_URL = 'https://n8n.gaureshnaik.cloud/webhook/lead-capture';
+
+    function getFormData(form) {
+      var data = {};
+      form.querySelectorAll('input, select, textarea').forEach(function (el) {
+        if (el.name) data[el.name] = el.value.trim();
+      });
+      return data;
+    }
+
+    function handleSubmit(formId, successId, source) {
+      var form    = document.getElementById(formId);
+      var success = document.getElementById(successId);
+      if (!form) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        // Basic required field check
+        var valid = true;
+        form.querySelectorAll('[required]').forEach(function (el) {
+          if (!el.value.trim()) { el.focus(); valid = false; }
+        });
+        if (!valid) return;
+
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+
+        var payload = getFormData(form);
+        payload.source = source;
+
+        fetch(N8N_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        })
+        .then(function (res) {
+          if (res.ok || res.status === 200) {
+            form.style.display = 'none';
+            if (success) success.classList.add('show');
+          } else {
+            btn.disabled = false;
+          }
+        })
+        .catch(function () {
+          btn.disabled = false;
+        });
+      });
+    }
+
+    handleSubmit('contact-form', 'cf-success', 'contact-form');
+    handleSubmit('popup-form',  'pf-success',  'popup');
+  })();
+  </script>
 
 </body>
 </html>
