@@ -753,7 +753,7 @@ body[dir="rtl"] .proc-step h3 { font-family: var(--font-arabic); }
 body[dir="rtl"] .proc-step p { font-family: var(--font-arabic); }
 
 /* === 11. TESTIMONIALS === */
-#testimonials { background: var(--white); overflow: hidden; }
+#testimonials { background: var(--white); overflow: hidden !important; }
 
 .testi-marquee .marquee-wrap::before { background: linear-gradient(to right,  var(--white), transparent); }
 .testi-marquee .marquee-wrap::after  { background: linear-gradient(to left, var(--white), transparent); }
@@ -767,10 +767,10 @@ body[dir="rtl"] .proc-step p { font-family: var(--font-arabic); }
 .testi-card {
   background: var(--white); border: 1px solid var(--border);
   border-radius: var(--r-md); padding: var(--sp-4);
-  min-width: 300px; max-width: 350px;
-  margin: 0 var(--sp-2); flex-shrink: 0;
+  min-width: 320px !important; max-width: 320px !important;
+  margin: 0 var(--sp-2); flex-shrink: 0 !important;
   box-shadow: var(--shadow-sm);
-  overflow: hidden; box-sizing: border-box; white-space: normal;
+  overflow: hidden !important; box-sizing: border-box !important; white-space: normal !important;
 }
 .testi-stars { display: flex; gap: 3px; margin-bottom: var(--sp-2); }
 .testi-stars i { color: var(--gold); font-size: .82rem; }
@@ -778,9 +778,9 @@ body[dir="rtl"] .proc-step p { font-family: var(--font-arabic); }
   font-size: .88rem; color: var(--text-dark);
   line-height: 1.72; font-style: italic;
   margin-bottom: var(--sp-2);
-  overflow: hidden; display: -webkit-box;
-  -webkit-line-clamp: 4; -webkit-box-orient: vertical;
-  white-space: normal; word-wrap: break-word; overflow-wrap: break-word;
+  overflow: hidden !important; display: -webkit-box !important;
+  -webkit-line-clamp: 4 !important; -webkit-box-orient: vertical !important;
+  white-space: normal !important; word-wrap: break-word !important; overflow-wrap: break-word !important;
 }
 .testi-author { display: flex; flex-direction: column; gap: 2px; }
 .testi-name  { font-weight: 700; font-size: .85rem; color: var(--text-dark); }
