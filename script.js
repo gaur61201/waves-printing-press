@@ -230,7 +230,12 @@ function setLang(lang) {
     document.querySelector('.hero-carousel'),
     document.getElementById('heroCarouselTrack'),
     ...document.querySelectorAll('.marquee-track'),
-    document.querySelector('.bts-marquee-track')
+    document.querySelector('.bts-marquee-track'),
+    // Testimonials marquee — wrap/clip container must also be LTR.
+    // In RTL mode the .marquee-wrap parent clips overflow from the wrong side,
+    // causing the track to appear/disappear instead of looping smoothly.
+    document.querySelector('.testi-marquee'),
+    document.querySelector('.testi-marquee .marquee-wrap')
   ];
   ltrContainers.forEach(function (el) {
     if (!el) return;
