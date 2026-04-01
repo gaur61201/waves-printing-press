@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- Homepage -->
   <url>
     <loc>https://gaur61201.github.io/waves-printing-press/</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gaur61201.github.io/waves-printing-press/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://gaur61201.github.io/waves-printing-press/"/>
   </url>
 
   <!-- Blog -->
   <url>
     <loc>https://gaur61201.github.io/waves-printing-press/blog.html</loc>
-    <lastmod>2026-03-18</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://gaur61201.github.io/waves-printing-press/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://gaur61201.github.io/waves-printing-press/blog.html"/>
   </url>
 
   <!-- Blog Posts -->
