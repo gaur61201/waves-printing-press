@@ -235,7 +235,9 @@ function setLang(lang) {
     // In RTL mode the .marquee-wrap parent clips overflow from the wrong side,
     // causing the track to appear/disappear instead of looping smoothly.
     document.querySelector('.testi-marquee'),
-    document.querySelector('.testi-marquee .marquee-wrap')
+    document.querySelector('.testi-marquee .marquee-wrap'),
+    // BTS marquee — wrapper/clip container must also be LTR for the same reason.
+    document.querySelector('.bts-marquee-wrapper')
   ];
   ltrContainers.forEach(function (el) {
     if (!el) return;
